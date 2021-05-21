@@ -1,0 +1,6 @@
+[submodule "Conduit_NodeJS"]
+	path = Conduit_NodeJS
+	url = https://github.com/PPastene/Conduit_NodeJS
+[submodule "vue3-realworld-example-app"]
+	path = vue3-realworld-example-app
+	url = https://github.com/PPastene/vue3-realworld-example-app
