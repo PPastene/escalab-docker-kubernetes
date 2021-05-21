@@ -1,0 +1,46 @@
+version: '3.6'
+
+services:
+
+    server:
+        container_name: express-server
+        build:
+            context: ./Conduit_NodeJS
+        ports:
+            - 8080:8080
+        depends_on:
+            - postgres
+        networks:
+            - realworld-red
+
+    client:
+        container_name: vue3-client
+        build:
+            context: ./vue3-realworld-example-app
+            target: production-stage
+        ports:
+            - 80:80
+        depends_on:
+            - server
+        networks:
+            - realworld-red
+
+    postgres:
+        container_name: postgres
+        image: postgres:13-alpine
+        ports:
+            - 5432:5432
+        environment:
+            POSTGRES_USER: username
+            POSTGRES_PASSWORD: mysecretpassword
+            POSTGRES_DB: realworld_db
+        volumes:
+            - pgdata:/var/lib/postgresql/data
+        networks:
+            - realworld-red
+
+networks:
+    realworld-red:
+
+volumes:
+    pgdata:
