@@ -1,0 +1,1 @@
+1. git clone https://github.com/PPastene/escalab-docker-kubernetes --recursive
