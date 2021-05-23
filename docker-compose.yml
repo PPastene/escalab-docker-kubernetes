@@ -7,7 +7,10 @@ services:
         build:
             context: ./Conduit_NodeJS
         ports:
-            - 8080:8080
+            - "8080:8080"
+        volumes:
+            - ./Conduit_NodeJS:/server
+            - /server/node_modules
         depends_on:
             - postgres
         networks:
@@ -19,7 +22,10 @@ services:
             context: ./vue3-realworld-example-app
             target: production-stage
         ports:
-            - 80:80
+            - "80:80"
+        volumes:
+            - ./vue3-realworld-example-app:/client
+            - /client/node_modules
         depends_on:
             - server
         networks:
@@ -29,7 +35,7 @@ services:
         container_name: postgres
         image: postgres:13-alpine
         ports:
-            - 5432:5432
+            - "5432:5432"
         environment:
             POSTGRES_USER: username
             POSTGRES_PASSWORD: mysecretpassword
