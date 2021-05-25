@@ -22,7 +22,7 @@ services:
             context: ./vue3-realworld-example-app
             target: production-stage
         ports:
-            - "80:80"
+            - "80:3000"
         volumes:
             - ./vue3-realworld-example-app:/client
             - /client/node_modules
@@ -34,12 +34,11 @@ services:
     postgres:
         container_name: postgres
         image: postgres:13-alpine
+        restart: always
         ports:
             - "5432:5432"
-        environment:
-            POSTGRES_USER: username
-            POSTGRES_PASSWORD: mysecretpassword
-            POSTGRES_DB: realworld_db
+        env_file:
+            - ./.env
         volumes:
             - pgdata:/var/lib/postgresql/data
         networks:
