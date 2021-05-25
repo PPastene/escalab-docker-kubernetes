@@ -3,7 +3,7 @@ version: '3.6'
 services:
 
     server:
-        container_name: express-server
+        container_name: realworld-backend
         build:
             context: ./Conduit_NodeJS
         ports:
@@ -17,7 +17,7 @@ services:
             - realworld-red
 
     client:
-        container_name: vue3-client
+        container_name: realworld-frontend
         build:
             context: ./vue3-realworld-example-app
             target: production-stage
