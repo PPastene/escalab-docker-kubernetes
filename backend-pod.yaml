@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: realworld-backend-pod
+  labels:
+    stack: backend
+spec:
+  containers:
+    - name: realworld-backend-container
+      image: realworld-backend
+      imagePullPolicy: Never
+      ports:
+        - name: web
+          containerPort: 8080
+          protocol: TCP
