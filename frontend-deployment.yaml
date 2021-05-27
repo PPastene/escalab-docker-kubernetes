@@ -3,10 +3,10 @@ kind: Deployment
 metadata:
   name: realworld-frontend-deployment
 spec:
-  replicas: 3
   selector:
     matchLabels:
       stack: frontend
+  replicas: 3
   template:
     metadata:
       labels:
@@ -18,6 +18,3 @@ spec:
           imagePullPolicy: Never
           ports:
             - containerPort: 3000
-          env:
-            - name: PORT
-              value: "3000"

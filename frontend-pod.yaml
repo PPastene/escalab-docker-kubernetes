@@ -6,7 +6,7 @@ metadata:
     stack: frontend
 spec:
   containers:
-    - name: realworld-frontend
+    - name: realworld-frontend-container
       image: realworld-frontend
       imagePullPolicy: Never
       ports:
