@@ -20,7 +20,7 @@ services:
         container_name: realworld-frontend
         build:
             context: ./vue3-realworld-example-app
-            target: production-stage
+            target: development-stage
         ports:
             - "3000:3000"
         volumes:
