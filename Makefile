@@ -20,12 +20,10 @@ docker-compose-nginx:
 	cp nginx/docker-compose-nginx.conf vue3-realworld-example-app/nginx.conf
 
 install-dev-docker:
-	make deps
 	make init-dev
 	make docker-compose-nginx
 
 install-prod-docker:
-	make deps
 	make init-prod
 	make docker-compose-nginx
 
@@ -53,7 +51,6 @@ build-frontend:
 	docker build --target production-stage -t realworld-frontend ./vue3-realworld-example-app
 
 install-kubernetes:
-	make deps
 	make init-prod
 	make kubernetes-nginx
 	make build-postgres
@@ -69,6 +66,13 @@ run-kubernetes:
 kubernetes:
 	make install-kubernetes
 	make run-kubernetes
+
+clean:
+	kubectl delete --all deployment -n realworld
+	kubectl delete --all svc -n realworld
+	kubectl delete --all secret -n realworld
+	kubectl delete namespace realworld
+	docker stop postgres_kubernetes
 
 to-windows:
 #https://github.com/espositoandrea/Make-to-Batch

@@ -17,6 +17,7 @@ IF /I "%1"=="build-frontend" GOTO build-frontend
 IF /I "%1"=="install-kubernetes" GOTO install-kubernetes
 IF /I "%1"=="run-kubernetes" GOTO run-kubernetes
 IF /I "%1"=="kubernetes" GOTO kubernetes
+IF /I "%1"=="clean" GOTO clean
 IF /I "%1"=="to-windows" GOTO to-windows
 GOTO error
 
@@ -44,13 +45,11 @@ GOTO error
 	GOTO :EOF
 
 :install-dev-docker
-	make deps
 	make init-dev
 	make docker-compose-nginx
 	GOTO :EOF
 
 :install-prod-docker
-	make deps
 	make init-prod
 	make docker-compose-nginx
 	GOTO :EOF
@@ -86,7 +85,6 @@ GOTO error
 	GOTO :EOF
 
 :install-kubernetes
-	make deps
 	make init-prod
 	make kubernetes-nginx
 	make build-postgres
@@ -104,6 +102,14 @@ GOTO error
 :kubernetes
 	make install-kubernetes
 	make run-kubernetes
+	GOTO :EOF
+
+:clean
+	kubectl delete --all deployment -n realworld
+	kubectl delete --all svc -n realworld
+	kubectl delete --all secret -n realworld
+	kubectl delete namespace realworld
+	docker stop postgres_kubernetes
 	GOTO :EOF
 
 :to-windows
