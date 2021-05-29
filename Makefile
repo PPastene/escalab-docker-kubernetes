@@ -1,7 +1,6 @@
 .PHONY: deps init-dev init-prod docker-compose kubernetes
 
 deps:
-#git clone https://github.com/PPastene/escalab-docker-kubernetes --recursive
 	git submodule init
 	git submodule update
 
@@ -71,6 +70,6 @@ kubernetes:
 	make install-kubernetes
 	make run-kubernetes
 
-
-
-
+to-windows:
+#https://github.com/espositoandrea/Make-to-Batch
+	make-to-batch -i Makefile -o make.bat
