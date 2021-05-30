@@ -44,6 +44,9 @@ kubernetes-nginx:
 build-postgres:
 	docker run --rm --name postgres_kubernetes -p 5432:5432 --env-file .env -d postgres:13-alpine
 
+build-mariadb:
+	docker run --rm --name mariadb_kubernetes -p 3306:3306 --env-file .env -d mariadb:10.6.1
+
 build-backend:
 	docker build -t realworld-backend ./Conduit_NodeJS
 
@@ -53,7 +56,7 @@ build-frontend:
 install-kubernetes:
 	make init-prod
 	make kubernetes-nginx
-	make build-postgres
+	make build-mariadb
 	make build-backend
 	make build-frontend
 
