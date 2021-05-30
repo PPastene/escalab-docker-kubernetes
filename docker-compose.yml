@@ -12,7 +12,7 @@ services:
             - ./Conduit_NodeJS:/server
             - /server/node_modules
         depends_on:
-            - postgres
+            - mariadb
         networks:
             - realworld-red
 
@@ -31,16 +31,16 @@ services:
         networks:
             - realworld-red
 
-    postgres:
-        container_name: postgres
-        image: postgres:13-alpine
+    mariadb:
+        container_name: mariadb
+        image: mariadb:10.6.1
         restart: always
         ports:
-            - "5432:5432"
+            - "3306:3306"
         env_file:
             - ./.env
         volumes:
-            - pgdata:/var/lib/postgresql/data
+            - dbdata:/var/lib/mysql
         networks:
             - realworld-red
 
@@ -48,4 +48,4 @@ networks:
     realworld-red:
 
 volumes:
-    pgdata:
+    dbdata:
