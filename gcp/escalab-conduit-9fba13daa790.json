@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "escalab-conduit",
+  "private_key_id": "9fba13daa790b56a1e51aecaf7389f09e84cee50",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCka83wQSiO25FM\nKWPxhtsDPnuwL+nJW9rj+0P2zPHKurG15DtKrDgu/WZbz9v1tvCnZ+SR+SaaJvC+\nWQ52PIv1F8qvcIk8Oy4ndFHoAuT5FXPdRXvy6eh09dKzF81mVj8c1bbi6cRTNy/o\nfLy6W2BqMeLv+Ld857uGZoC8OJIt+62Hvoim4g8mjVj/P9A8Ysg03o8t74VxHus6\nXB5597DfYKZtF3yNvifuX+uWVQ5r4SYw5gq4cEDAQBh6m14Wf5XhfGEZAfTXyoir\nSYCWCfdfSN4LQxH4Z+gPoSzg91LBflbcwp7CL6wMRC2XsWL74tRlSGBkGsc/bHZi\n7+I9GPxbAgMBAAECggEAJg+6nYpH3EIhsXLHawrfujGFqnR89xrnYe0xf3lT460y\nJDwQKaoSW3ZXcpt8fLX7oZUgSVZWxEqNYlL1UROVBoiaZ+ByNFoyxflcWIwK+0on\nByrllYbmQ+UAAGtbJfyDIaarbn3U77qPwY7WlYE/oXWo5go6V5TBSUyDMo8Z78C7\nBoA8PD5lE4VEQ8eai7oQRULpG1nf8j6aOPXBSgEZdQxGoZ1SE8RCIOthVvql6ddB\nkO1bBChJXdsgOOZxyXUF6M4E7OvcOrMeU2UJbWejLxm9S6XdM4rt/JI/CV6OY1IK\nt2wTlME5bCqWi0qsBeI0aTBgfytDl/bLrlVa0/okQQKBgQDWpvaY5UtmRT+/OgfG\nl+/kwF9ilihQhqU4L+iapRXRMkFE4Z5h1C+1LTeIhL/nWfqk9fepJqnm0Sgrp8Fk\nu3CE+6gTIMV470DLXJ9rOYX1Jkpyf+Zl0m22PJ4LNG+9paAOBh4pSBlVb84fgkWd\nYXrPT3eiCKm5GW/pGyYaoyhq4QKBgQDEF9IQybppMqpLeQzvagUJbwJzNRj5e40l\nxs1zZmqmJjeRO8J6owpbpo4myaF9UrY0JTLKXfcxjSWO5p3sdyQRfcRHTinvxlP1\n7cQbSy9F2/eUTmAmrsIYdChp2hA3vtVBkx1uQe7Q0zwltbB+36NCtBmUD5zQeA56\ndqFyiEoquwKBgC8q1ys3z360ntJlbQn9nxBUGWGvf0Jao/mZxXId7pJeiasaLNRw\nbN9SBU7xZL3wrrwK9JXt0g3PThVxsnRxH8OJDSDO5bWyVTmaq8lDBaWd+WP5qOYc\n/FC8NzpdFmTE/Uu3mm8V0cNNYyzXUnbH0dW2L6KiZrEu3sGJXrEhwyLhAoGBAL9r\nXWWD9tOQYMqyDR19ChOuaN7bu1h28k8pJQ98r6knb2D3zB35IDhdezCD7X+wCSsY\nEN+ZIKAfX8WCfDEEEJJ+iebtd2SX3wgYJTJbj3cLhkAgzh2UxOYoJfdGpkQ0pmqP\n2M/zztPNEE7jcLo5R17q/nkZUIP0XnXPbkSmpHfXAoGAbtZ6qgyGhMFK4vDHsfKw\nwjs6K/M5ZTr07ggbAeavmr9EM2lWKE+UH/z/bJTayL5HoMLTOBobiT0jj+x6scWm\nsfr7AE9cxe+djC/Ot2MuAmBI3Rdpxs4L5a/EOhAH8xOTntrvlGK20ICVhfr6Py9Y\n5hXhWPzwlNZc7ehBXIB8fsM=\n-----END PRIVATE KEY-----\n",
+  "client_email": "cloud-sql@escalab-conduit.iam.gserviceaccount.com",
+  "client_id": "106016564392002244457",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/cloud-sql%40escalab-conduit.iam.gserviceaccount.com"
+}
