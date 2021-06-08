@@ -25,16 +25,15 @@
 3. Construir las imagenes:
     * `docker build -t realworld-backend ./Conduit_NodeJS`
     * `docker build --target production-stage -t realworld-frontend ./vue3-realworld-example-app`
-4. En el archivo `kubernetes/backend-secret.yaml` cambiar el valor de la variable `DB_HOST` por la IP obtenida en el paso anterior
-5. Aplique los siguientes archivos de Kubernetes:
+4. Aplique los siguientes archivos de Kubernetes:
     * `kubectl apply -f kubernetes/namespace.yaml`
     * `kubectl apply -f kubernetes/mariadb-deployment.yaml`
     * `kubectl apply -f kubernetes/backend-secret.yaml`
     * `kubectl apply -f kubernetes/backend-deployment.yaml`
     * `kubectl apply -f kubernetes/frontend-deployment.yaml`
-6. Verifique que los archivos se hayan aplicado correctamente con `kubectl get all -n realworld`
-7. Ingrese al frontend con http://localhost
-8. Para eliminar todo el deployment local de Kubernetes ejecute el siguiente comando:
+5. Verifique que los archivos se hayan aplicado correctamente con `kubectl get all -n realworld`
+6. Ingrese al frontend con http://localhost
+7. Para eliminar todo el deployment local de Kubernetes ejecute el siguiente comando:
     * `kubectl delete namespace realworld`
 ## Deployment a Google Cloud Platform
 ### Push de contenedores
