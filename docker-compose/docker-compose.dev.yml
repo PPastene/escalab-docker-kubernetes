@@ -38,8 +38,8 @@ services:
         ports:
             - "3306:3306"
         environment:
-            MYSQL_ROOT_PASSWORD: lemsystem
-            MYSQL_DATABASE: lem_soporte_db
+            MYSQL_ROOT_PASSWORD: mysecretpassword
+            MYSQL_DATABASE: realworld_db
         volumes:
             - dbdata:/var/lib/mysql
         networks:
