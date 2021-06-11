@@ -32,7 +32,7 @@
     * `kubectl apply -f kubernetes/backend-deployment.yaml`
     * `kubectl apply -f kubernetes/frontend-deployment.yaml`
 5. Verifique que los archivos se hayan aplicado correctamente con `kubectl get all -n realworld`
-6. Ingrese al frontend con http://localhost
+6. Ingrese al frontend con http://localhost:3000
 7. Para eliminar todo el deployment local de Kubernetes ejecute el siguiente comando:
     * `kubectl delete namespace realworld`
 ## Deployment a Google Cloud Platform
