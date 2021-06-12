@@ -42,7 +42,7 @@ spec:
               mountPath: /secrets/cloudsql
               readOnly: true
         - name: backend-container
-          image: us.gcr.io/[ID_DEL_PROYECTO]/realworld-backend
+          image: gcr.io/[ID_DEL_PROYECTO]/realworld-backend
           ports:
             - containerPort: 8080
               protocol: TCP
