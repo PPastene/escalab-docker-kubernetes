@@ -37,8 +37,9 @@ services:
         restart: always
         ports:
             - "3306:3306"
-        env_file:
-            - ./.env
+        environment:
+            MYSQL_ROOT_PASSWORD: mysecretpassword
+            MYSQL_DATABASE: realworld_db
         volumes:
             - dbdata:/var/lib/mysql
         networks:
