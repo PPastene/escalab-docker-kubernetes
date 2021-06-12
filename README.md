@@ -58,6 +58,7 @@
 2. En  API y Servicios cree una nueva credencial de tipo 'Cuenta de Servicio'. En el paso 1 asignale un nombre y descripción (ej, Cloud SQL) y en el siguiente paso seleccione la función 'Cliente de Cloud SQL' (puede usar el cuadro de busqueda), luego cree la cuenta de servicio.
 3. Una vez creada, seleccione la cuenta, en el detalle vaya a la opcion de 'Claves' y luego seleccione 'Agregar Clave', escoja de tipo JSON y una vez creada se descargará automaticamente. Ese archivo es unico y contiene el acceso al Proxy SQL, no lo comparta con nadie.
 4. En SQL copie el nombre de la conexion con la instancia, y reemplazelo en el valor `[INSTANCIA_CONEXION_MYSQL]` del archivo `gcp/backend-gcp-deployment.yaml` en la linea 36
+
 Nota: Si tiene problemas para conectar el backend con el Proxy SQL, siga la [documentación de Google](https://cloud.google.com/sql/docs/mysql/connect-kubernetes-engine?hl=es) para habilitar alguna API que no está a simple vista
 ### Modificar y aplicar archivos de Kubernetes
 1. Crear el namespace para el proyecto:
