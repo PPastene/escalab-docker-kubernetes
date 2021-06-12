@@ -56,19 +56,19 @@
     * `docker push gcr.io/[ID_DEL_PROYECTO]/realworld-backend`
     * `docker build --target production-stage -t gcr.io/[ID_DEL_PROYECTO]/realworld-frontend ./vue3-realworld-example-app`
     * `docker push gcr.io/[id_del_proyecto]/realworld-frontend`
-9. En SQL crear una instancia de SQL de tipo MySQL version 8.0. Una vez creada, agregar un usuario de nombre root y contraseña a eleccion, y una base de datos de nombre `realworld_db`
 ### Configuración de Proxy SQL
-1. En IAM y Administración escoga el proyecto del cual está trabajando, vaya al apartado de 'Cuentas de Servicio', dele un nombre descriptivo (ej, cloud-sql) y en el siguiente paso seleccione la función 'Cliente de Cloud SQL', luego cree la cuenta de servicio.
-2. Una vez creada, seleccione la cuenta y escoja la opción 'Administrar claves', luego seleccione 'Agregar Clave', escoja de tipo JSON y descargue el archivo .json. Ese archivo es unico y contiene el acceso al Proxy SQL, no lo comparta con nadie
-3. En el contexto de Kubernetes de Google Cloud cree el secreto con el archivo JSON que descargó `kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=[RUTA_ARCHIVO_JSON]`
-4. En la instancia de SQL, copie el nombre de conexion de la instancia y reemplazelo en el valor `[INSTANCIA_CONEXION_MYSQL]` del archivo `gcp/backend-gcp-deployment.yaml` en la linea 36
-### Aplicar archivos de Kubernetes
+1. En SQL crear una instancia de SQL de tipo MySQL version 8.0, al momento de crearla se le pedirá una contraseña del cual le será asignado al usuario root. Una vez creada la instancia, cree una base de datos de nombre `realworld_db`.
+2. En IAM y Administración escoga el proyecto del cual está trabajando, vaya al apartado de 'Cuentas de Servicio', dele un nombre descriptivo (ej, Cloud SQL) y en el siguiente paso seleccione la función 'Cliente de Cloud SQL' (puede usar el cuadro de busqueda), luego cree la cuenta de servicio.
+3. Una vez creada, seleccione la cuenta y escoja la opción 'Administrar claves', luego seleccione 'Agregar Clave', escoja de tipo JSON y descargue el archivo .json. Ese archivo es unico y contiene el acceso al Proxy SQL, no lo comparta con nadie
+4. En el contexto de Kubernetes de Google Cloud cree el secreto con el archivo JSON que descargó `kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=[RUTA_ARCHIVO_JSON]`
+5. En la instancia de SQL copie el nombre de la conexion con la instancia, y reemplazelo en el valor `[INSTANCIA_CONEXION_MYSQL]` del archivo `gcp/backend-gcp-deployment.yaml` en la linea 36
+### Modificar y aplicar archivos de Kubernetes
 1. Modificar los siguientes archivos:
     * En `gcp/backend-gcp-deployment.yaml` cambiar el valor de `[ID_DEL_PROYECTO]` en la linea 43 por el identificador del proyecto
     * En `gcp/frontend-gcp-deployment.yaml` cambiar el valor de `[ID_DEL_PROYECTO]` en la linea 30 por el identificador del proyecto
     * En `gcp/backend-gcp-secret.yaml` cambiar el valor de `[PASSWORD_USUARIO]` en la linea 10 por la contraseña seteada al usuario root en SQL
 2. Aplicar los siguientes archivos de Kubernetes
-    * `kubectl apply -f gcp/backend-secret.yaml`
-    * `kubectl apply -f gcp/backend-deployment.yaml`
-    * `kubectl apply -f gcp/frontend-deployment.yaml`
+    * `kubectl apply -f gcp/backend-gcp-secret.yaml`
+    * `kubectl apply -f gcp/backend-gcp-deployment.yaml`
+    * `kubectl apply -f gcp/frontend-gcp-deployment.yaml`
 3. Ingresar a la IP asignada al cluster de Kubernetes para ingresar al sitio
