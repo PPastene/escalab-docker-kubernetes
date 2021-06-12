@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: realworld-frontend-service
+  name: frontend-service
 spec:
   ports:
     - name: http-port
